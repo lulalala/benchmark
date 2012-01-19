@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+['Africa', 'Asia', 'Europe', 'Middle East',
+ 'Oceania', 'America'].each do |region|
+  Region.find_or_create_by_name(region)
+end
