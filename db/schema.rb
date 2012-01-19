@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120119031218) do
+ActiveRecord::Schema.define(:version => 20120119034412) do
+
+  create_table "countries", :force => true do |t|
+    t.string   "name"
+    t.integer  "region_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "regions", :force => true do |t|
     t.string   "name"
