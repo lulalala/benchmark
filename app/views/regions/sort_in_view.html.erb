@@ -1,0 +1,10 @@
+<h1>Listing regions</h1>
+
+<% benchmark("Benchmark: sort in view") do %>
+  <% @regions.each do |region| %>
+    <h2><%= region.name %></h2>
+    <% region.countries.order(:name).each do |country| %>
+      <%= country.name %><br/>
+    <% end %>
+  <% end %>
+<% end %>

@@ -10,6 +10,25 @@ class RegionsController < ApplicationController
     end
   end
 
+  def sort_in_view
+    @regions = Region.all
+
+    respond_to do |format|
+      format.html
+    end
+  end
+
+  def sort_in_controller
+    @regions = Region.all
+    @regions.each do |r|
+      r.countries.order_by_name
+    end
+
+    respond_to do |format|
+      format.html
+    end
+  end
+
   # GET /regions/1
   # GET /regions/1.json
   def show
