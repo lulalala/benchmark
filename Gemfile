@@ -30,6 +30,8 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+gem 'ruby-prof', :git => 'git://github.com/wycats/ruby-prof.git'
+
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false

@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/wycats/ruby-prof.git
+  revision: aece113ff1462b792ea58c6559d3c8fc9c95b468
+  specs:
+    ruby-prof (0.11.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -112,6 +118,7 @@ DEPENDENCIES
   coffee-rails (~> 3.1.1)
   jquery-rails
   rails (= 3.1.1)
+  ruby-prof!
   sass-rails (~> 3.1.4)
   sqlite3
   turn
