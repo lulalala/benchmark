@@ -11,21 +11,25 @@ class RegionsController < ApplicationController
   end
 
   def sort_in_view
-    @regions = Region.all
+    self.class.benchmark("$sort in view") do
+      @regions = Region.all
 
-    respond_to do |format|
-      format.html
+      respond_to do |format|
+        format.html
+      end
     end
   end
 
   def sort_in_controller
-    @regions = Region.all
-    @regions.each do |r|
-      r.countries.order_by_name
-    end
+    self.class.benchmark("$sort in controller") do
+      @regions = {}
+      Region.all.each do |r|
+        @regions[r] = r.countries.order_by_name
+      end
 
-    respond_to do |format|
-      format.html
+      respond_to do |format|
+        format.html
+      end
     end
   end
 
